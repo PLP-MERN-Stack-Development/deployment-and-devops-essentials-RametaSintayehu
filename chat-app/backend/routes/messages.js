@@ -1,4 +1,3 @@
-# Create messages routes if needed
 cat > chat-app/backend/routes/messages.js << 'EOF'
 import express from 'express';
 const router = express.Router();
