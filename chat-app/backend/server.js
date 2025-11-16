@@ -1,4 +1,3 @@
-cat > chat-app/backend/server.js << 'EOF'
 import express from 'express';
 import cors from 'cors';
 import helmet from 'helmet';
