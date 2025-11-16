@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-const API_BASE_URL = 'https://deployment-and-devops-essentials-ebk0.onrender.com';
+// Use environment variables - Vite automatically exposes VITE_* variables
+const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000';
+const APP_TITLE = import.meta.env.VITE_APP_TITLE || 'Chat App';
 
 function App() {
   const [backendStatus, setBackendStatus] = useState('checking...');
@@ -47,8 +49,10 @@ function App() {
   return (
     <div className="app">
       <div className="header">
-        <h1>💬 Chat App</h1>
+        <h1>💬 {APP_TITLE}</h1>
         <p>Full-stack MERN application deployed on Render</p>
+        <p><small>API URL: {API_BASE_URL}</small></p>
+        <p><small>Environment: {import.meta.env.MODE}</small></p>
       </div>
 
       <div className="status-cards">
@@ -62,7 +66,7 @@ function App() {
         </div>
         <div className="status-card">
           <h3>Environment</h3>
-          <p>Production</p>
+          <p>{import.meta.env.MODE}</p>
         </div>
       </div>
 
