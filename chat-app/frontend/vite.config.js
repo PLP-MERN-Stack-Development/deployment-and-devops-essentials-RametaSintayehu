@@ -6,17 +6,13 @@ export default defineConfig({
   server: {
     port: 3000,
     proxy: {
-      '/api': 'http://localhost:5000'
+      '/api': {
+        target: 'https://deployment-and-devops-essentials-ebk0.onrender.com',
+        changeOrigin: true
+      }
     }
   },
   build: {
-    outDir: 'dist',
-    sourcemap: false, // Disable source maps in production
-    minify: 'terser', // Minify code
-    terserOptions: {
-      compress: {
-        drop_console: true, // Remove console logs in production
-      }
-    }
+    outDir: 'dist'
   }
 })
