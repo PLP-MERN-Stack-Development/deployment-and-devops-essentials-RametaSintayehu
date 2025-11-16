@@ -1,0 +1,20 @@
+# render.yaml
+services:
+  - type: web
+    name: chat-app-backend
+    env: node
+    plan: free
+    region: ohio  # or virginia, oregon - choose closest to you
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: MONGODB_URI
+        value: mongodb+srv://rametasint_db_user:Yoya%402024@mern-chat-app.vpec4ck.mongodb.net/chat-app?retryWrites=true&w=majority
+      - key: JWT_SECRET
+        value: chat_app_super_secure_jwt_secret_key_2024_123456
+      - key: PORT
+        value: 10000
+      - key: CLIENT_URL
+        value: https://your-chat-frontend.vercel.app
