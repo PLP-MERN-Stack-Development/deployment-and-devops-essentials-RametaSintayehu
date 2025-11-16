@@ -1,5 +1,3 @@
-# Create a basic auth route
-cat > chat-app/backend/routes/auth.js << 'EOF'
 import express from 'express';
 const router = express.Router();
 
@@ -18,5 +16,5 @@ router.post('/login', (req, res) => {
 });
 
 export default router;
-EOF
+
 
